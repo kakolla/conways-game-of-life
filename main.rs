@@ -4,20 +4,23 @@ use macroquad::prelude::*;
 async fn main() {
     println!("Running");
 
-    let x: f32 = screen_width() / 2.0;
-    let y: f32 = screen_height() / 2.0;
+    // let x: f32 = screen_width() / 2.0;
+    // let y: f32 = screen_height() / 2.0;
+    //
 
-    let w: f32 = 300.0;
-    let h: f32 = 300.0;
+    let x = 0.0;
+    let y = 0.0;
+    let w: f32 = 1200.0;
+    let h: f32 = 1200.0;
 
     let mut grid: Vec<Vec<i32>> = vec![vec![0; w as usize]; h as usize];
     grid[150][150] = 1;
     grid[149][150] = 1;
     grid[151][150] = 1;
-    grid[152][150] = 1;
-    grid[153][150] = 1;
-    grid[154][150] = 1;
-    grid[155][150] = 1;
+    // grid[152][150] = 1;
+    // grid[153][150] = 1;
+    // grid[154][150] = 1;
+    // grid[155][150] = 1;
 
     let mut iter: i32 = 0;
     let mut iter_text: String = String::from("Iterations: ");
@@ -65,7 +68,7 @@ async fn main() {
         for i in 0..h as i32 {
             for j in 0..w as i32 {
                 if grid[i as usize][j as usize] == 1 {
-                    draw_rectangle(x + i as f32, y + j as f32, 1.0, 1.0, WHITE);
+                    draw_rectangle(x + (i as f32 * 4.0), y + (j as f32 * 4.0), 4.0, 4.0, WHITE);
                 } else {
                     // draw_rectangle(x + i as f32, y + j as f32, 1.0, 1.0, BLACK);
                 }
