@@ -15,6 +15,19 @@ async fn main() {
 
     let mut iter: i32 = 0;
     let mut iter_text: String = String::from("Iterations: ");
+
+    // create dirs
+    // let dirs: Vec<(i32, i32)> = vec![(0, 0, ];
+    let mut dirs: Vec<(i32, i32)> = vec![];
+    for i in -1..2 {
+        for j in -1..2 {
+            dirs.push((i, j));
+        }
+    }
+    for i in 0..dirs.len() - 1 {
+        println!("{} {} ", dirs[i as usize].0, dirs[i as usize].1);
+    }
+
     loop {
         clear_background(BLACK);
 
@@ -35,9 +48,18 @@ async fn main() {
             }
         }
 
-        // process
-
         // encode rules
+        for i in 0..h as i32 {
+            for j in 0..w as i32 {
+                if grid[i as usize][j as usize] == 1 {
+                    // alive
+                } else {
+                    // dead
+                }
+            }
+        }
+
+        // process
         iter += 1;
         iter_text = format!("Iterations: {}", iter);
 
